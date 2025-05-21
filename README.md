@@ -24,6 +24,7 @@ A smart and scalable Fleet Management System designed to monitor, track, and man
 - Bootstrap / AngularJS (optional based on your stack)
 
 ### IoT & Hardware
+- Proteus(For simulating IoT hardwares)
 - GPS Module (e.g., NEO-6M)
 - Fuel Consumption Sensor
 - Engine Diagnostics via OBD-II
@@ -46,7 +47,8 @@ A smart and scalable Fleet Management System designed to monitor, track, and man
     source env/bin/activate  # for Linux/macOS
     env\Scripts\activate     # for Windows
     pip install -r requirements.txt
-
+**Install Proteus**
+ - Install Proteus and access all the proteus files to view the simulations
 **Apply migrations**
   -python manage.py migrate
 
