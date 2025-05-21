@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{%load  static %}
+{% block content%}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+<main class="main-content">
+            <header class="dashboard-header">
+                <h1>Dashboard</h1>
+            </header>
+            
+            <div class="content-grid">
+                <div class="income-expenses-box">
+                    <h2>Income & Expenses</h2>
+                </div>
+                <div class="reminder-box">
+                    <h2>Reminder</h2>
+                    <p>No Reminder</p>
+                    <button class="add-reminder-btn">+ Add Reminder</button>
+                </div>
+                <div class="location-box">
+                    <h3>Vehicle Current Location</h3>
+                    <div class="search-input">
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+                <div class="status-box">
+                    <h3>Vehicle Running Status</h3>
+                    <div class="search-input">
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %}
+   

@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{%load  static %}
+{% block content%}
+<link rel="stylesheet" href="{% static 'bookings.css' %}">
+<main>
+      <div class="breadcrumb">
+        <a href="#">Dashboard</a> / <span>Bookings</span>
+      </div>
+      <h2>Bookings</h2>
+      <div class="table-card">
+        <div class="table-header">
+          <div></div>
+          <div>
+            <label for="search">Search:</label>
+            <input type="text" id="search" class="search-input">
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Customer</th>
+              <th>Vechicle</th>
+              <th>Type</th>
+              <th>Driver</th>
+              <th>Trip Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="7" class="no-data">No data available in table</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button disabled>Previous</button>
+          <button>Next</button>
+        </div>
+      </div>
+      <div class="version">Version 3.0</div>
+    </main>
+{% endblock %}

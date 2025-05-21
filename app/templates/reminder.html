@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{%load  static %}
+{% block content%}
+<link rel="stylesheet" href="{% static 'reminder.css' %}">
+<div class="main">
+        <div class="header">
+            <span>reminder Info</span>
+            <span class="breadcrumb">Dashboard / reminder info</span>
+        </div>
+        <div class="content">
+            <div class="table-container">
+                <div class="table-header">
+                    <span>Reminder Info</span>
+                    <div class="search-box">
+                        <label>Search:</label>
+                        <input type="text" />
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Vehicle</th>
+                            <th>Date</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="no-data">No data available in table</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button disabled>Previous</button>
+                    <button disabled>Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

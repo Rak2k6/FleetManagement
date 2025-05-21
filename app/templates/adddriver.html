@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+{%load  static %}
+{% block content%}
+<link rel="stylesheet" href="{% static 'adddriver.css' %}">
+    <main>
+      <div class="breadcrumb">
+        Vehicle / Add driver
+      </div>
+      <h2>Add driver</h2>
+      <form class="add-driver-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Driver Name*</label>
+            <input type="text" placeholder="Driver Name">
+          </div>
+          <div class="form-group">
+            <label>Mobile*</label>
+            <input type="text" placeholder="Mobile">
+          </div>
+          <div class="form-group">
+            <label>Age*</label>
+            <input type="text" placeholder="Age">
+          </div>
+          <div class="form-group">
+            <label>License No*</label>
+            <input type="text" placeholder="License No">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>License Expiry Date*</label>
+            <input type="date" placeholder="License Expiry Date">
+          </div>
+          <div class="form-group">
+            <label>Total Experience*</label>
+            <input type="text" placeholder="Total Experience">
+          </div>
+          <div class="form-group">
+            <label>Date of Joining*</label>
+            <input type="date" placeholder="Date of Joining">
+          </div>
+          <div class="form-group">
+            <label>Reference/Notes</label>
+            <input type="text" placeholder="Reference or Notes">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group address-group">
+            <label>Address*</label>
+            <textarea placeholder="Address"></textarea>
+          </div>
+          <div class="form-group status-group">
+            <label>Driver Status</label>
+            <select>
+              <option>Select Driver Status</option>
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit">Add Driver</button>
+        </div>
+      </form>
+    </main>
+  {% endblock %}
