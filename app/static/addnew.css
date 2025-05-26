@@ -1,6 +1,9 @@
 /* Removed side menu and dropdown styles to avoid collision with global styles.css */
 
 /* Main Content - Add New Group Page Specific Styles will be in add_new_group.css */
+.body{
+    background-color:#ffffff; 
+}
 .main-content.add-new-group-page {
     flex-grow: 1;
     padding: 20px;

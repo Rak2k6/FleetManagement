@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
-{%load  static %}
-{% block content%}
+{% load static %}
+{% block content %}
 <link rel="stylesheet" href="{% static 'bookings2.css' %}">
     <main>
       <div class="breadcrumb">
@@ -38,9 +38,23 @@
                 Search: <input type="text">
               </span>
             </div>
-            <div class="table-row no-data">
-              No data available in table
-            </div>
+            {% if bookings %}
+                {% for booking in bookings %}
+                <div class="table-row">
+                    <span>{{ forloop.counter }}</span>
+                    <span>{{ booking.DriverID.Name }}</span>
+                    <span>{{ booking.CusID.CusName }}</span>
+                    <span>{{ booking.StartLocation }} - {{ booking.EndLocation }}</span>
+                    <span>{{ booking.TotalAmount }}</span>
+                    <span>{{ booking.Status }}</span>
+                    <span><a href="#">Edit</a></span>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="table-row no-data">
+                    No data available in table
+                </div>
+            {% endif %}
             <div class="table-footer">
               <button disabled>Previous</button>
               <button disabled>Next</button>

@@ -18,6 +18,9 @@ class Vehicle(models.Model):
     RegistrationExpDate = models.DateField()
     VehicleGroup = models.CharField(max_length=255)
     VehicleColour = models.CharField(max_length=50)
+    apiUrl = models.URLField(max_length=200, blank=True, null=True)
+    apiUsername = models.CharField(max_length=100, blank=True, null=True)
+    apiPassword = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.Name
@@ -31,6 +34,8 @@ class Driver(models.Model):
     DateOfJoining = models.DateField()
     TotalExperience = models.IntegerField()
     Address = models.CharField(max_length=255)
+    Age = models.IntegerField(blank=True, null=True)
+    ReferenceNotes = models.CharField(max_length=255, blank=True, null=True)
     STATUS_CHOICES = [
         ('Active', 'Active'),
         ('Inactive', 'Inactive'),

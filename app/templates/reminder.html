@@ -1,11 +1,11 @@
 {% extends 'base.html'%}
-{%load  static %}
-{% block content%}
+{% load static %}
+{% block content %}
 <link rel="stylesheet" href="{% static 'reminder.css' %}">
 <div class="main">
         <div class="header">
-            <span>reminder Info</span>
-            <span class="breadcrumb">Dashboard / reminder info</span>
+            <span>Reminder Info</span>
+            <span class="breadcrumb">Dashboard / Reminder Info</span>
         </div>
         <div class="content">
             <div class="table-container">
@@ -27,9 +27,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colspan="5" class="no-data">No data available in table</td>
-                        </tr>
+                        {% if remainders %}
+                            {% for remainder in remainders %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ remainder.VehicleID.Name }}</td>
+                                <td>{{ remainder.RemDate }}</td>
+                                <td>{{ remainder.Message }}</td>
+                                <td><a href="#">Edit</a></td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="5" class="no-data">No data available in table</td>
+                            </tr>
+                        {% endif %}
                     </tbody>
                 </table>
                 <div class="pagination">

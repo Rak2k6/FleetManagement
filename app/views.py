@@ -64,7 +64,7 @@ def add_vehicle(request):
         Vehicle.objects.create(VehicleRegNo=VehicleRegNo, Name=Name, Type=Type, RegistrationExpDate=RegistrationExpDate,
                                VehicleGroup=VehicleGroup, VehicleColour=VehicleColour)
         return redirect('vehicle_list')
-    return render(request, 'vehicle.html')
+    return render(request, 'addnew.html')
 
 def vehicle_list(request):
     vehicles = Vehicle.objects.all()

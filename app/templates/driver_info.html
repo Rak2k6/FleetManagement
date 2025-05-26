@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
-{%load  static %}
-{% block content%}
+{% load static %}
+{% block content %}
 <link rel="stylesheet" href="{% static 'driver_info.css' %}">
     <main>
       <header>
@@ -30,16 +30,24 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Will Smith</td>
-                <td>09079373999</td>
-                <td>K32138212</td>
-                <td>2021-11-25</td>
-                <td>2021-07-17</td>
-                <td><span class="active-badge">Active</span></td>
-                <td><span class="edit-icon">&#9998;</span></td>
-              </tr>
+              {% if drivers %}
+                {% for driver in drivers %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ driver.Name }}</td>
+                  <td>{{ driver.MobileNo }}</td>
+                  <td>{{ driver.LicenseNo }}</td>
+                  <td>{{ driver.LicenseExpDate }}</td>
+                  <td>{{ driver.DateOfJoining }}</td>
+                  <td>{% if driver.Status == 'Active' %}<span class="active-badge">Active</span>{% else %}Inactive{% endif %}</td>
+                  <td><span class="edit-icon">&#9998;</span></td>
+                </tr>
+                {% endfor %}
+              {% else %}
+                <tr>
+                  <td colspan="8" class="no-data">No data available in table</td>
+                </tr>
+              {% endif %}
             </tbody>
           </table>
           <div class="pagination">
